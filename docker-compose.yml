@@ -1,0 +1,69 @@
+version: "2"
+
+services:
+
+  memcache1:
+    hostname: memcache1
+    extends:
+      file: ./memcache/docker-compose.yml
+      service: memcache
+
+  memcache2:
+    hostname: memcache2
+    extends:
+      file: ./memcache/docker-compose.yml
+      service: memcache
+
+  memcache3:
+    hostname: memcache3
+    extends:
+      file: ./memcache/docker-compose.yml
+      service: memcache
+
+  tomcat1:
+    hostname: tomcat1
+    extends:
+      file: ./tomcat/docker-compose.yml
+      service: tomcat
+    ports:
+      - "8081:8080"
+    links:
+      - memcache1
+      - memcache2
+      - memcache3
+
+  tomcat2:
+    hostname: tomcat2
+    extends:
+      file: ./tomcat/docker-compose.yml
+      service: tomcat
+    ports:
+      - "8082:8080"
+    links:
+      - memcache1
+      - memcache2
+      - memcache3
+
+  tomcat3:
+    hostname: tomcat3
+    extends:
+      file: ./tomcat/docker-compose.yml
+      service: tomcat
+    ports:
+      - "8083:8080"
+    links:
+      - memcache1
+      - memcache2
+      - memcache3
+
+  balancer:
+    hostname: balancer
+    extends:
+      file: ./balancer/docker-compose.yml
+      service: balancer
+    ports:
+      - "8080:8080"
+    links:
+      - tomcat1
+      - tomcat2
+      - tomcat3
