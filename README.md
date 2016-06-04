@@ -29,7 +29,7 @@ TomcatX[1-3] port is exposed to *:808X
 
 ## JSESSIONID
 
-If you check the format of JSESSIONID cookie, you'll something like this:
+If you have a look at JSESSIONID cookie, you'll see something like this:
 
 	A987F58AB5F24E5634C4D8B4256D330C-tomcat3.tomcat1
 
