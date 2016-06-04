@@ -16,7 +16,7 @@ To play with do the following:
 	git clone https://github.com/Silvmike/memcached-modproxy-tomcat.git
 
 
-Run **docker-composer build* to build all containers required for running use case.
+Run **docker-composer build** to build all containers required for running use case.
 
 Run **docker-composer up** to run all required containers.
 
