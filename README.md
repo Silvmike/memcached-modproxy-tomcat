@@ -21,6 +21,7 @@ Run **docker-composer build** to build all containers required for running use c
 Run **docker-composer up** to run all required containers.
 
 Balancer port is exposed to *:8080
+
 TomcatX[1-3] port is exposed to *:808X
 
 P.S. You may be interested in visiting **[this page](https://github.com/Silvmike/clusterize)**
