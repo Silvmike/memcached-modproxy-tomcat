@@ -11,7 +11,7 @@ This branch uses:
 
 ## Up and running
 
-**Prerequisites**: Docker, Docker Composer, Git installed.
+**Prerequisites**: Java, Docker, Docker Composer, Git installed.
 
 	git clone https://github.com/Silvmike/memcached-modproxy-tomcat.git
 
